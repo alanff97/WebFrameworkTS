@@ -1,0 +1,20 @@
+{
+  "name": "webframeworkts",
+  "version": "1.0.0",
+  "description": "Web Framework with Typescript by Alan Figueroa",
+  "main": "index.js",
+  "scripts": {
+   
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alanff97/WebFrameworkTS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alanff97/WebFrameworkTS/issues"
+  },
+  "homepage": "https://github.com/alanff97/WebFrameworkTS#readme"
+}
