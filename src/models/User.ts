@@ -1,6 +1,9 @@
+import axios from 'axios';
+import { AxiosResponse } from 'axios';
 interface UserProps {
   name?: string;
   age?: number;
+  id?: number;
 }
 type Callback = () => void;
 export class User {
@@ -11,6 +14,7 @@ export class User {
   }
 
   set(update: UserProps): void {
+    // using the sign ? in  the interface because of this, we can update one or more properties
     Object.assign(this.data, update);
   }
   on(event: string, callback: Callback): void {
@@ -27,5 +31,17 @@ export class User {
     handlers.forEach((callback) => {
       callback();
     });
+  }
+
+  fetch(): void {
+    try {
+      axios
+        .get(`http://localhost:3000/users/${this.get('id')}`)
+        .then((response: AxiosResponse): void => {
+          this.set(response.data)
+        });
+    } catch (error) {
+      return error;
+    }
   }
 }
