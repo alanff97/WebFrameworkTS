@@ -1,4 +1,5 @@
-import axios from 'axios';
+import { User } from './models/User';
 
-axios.get('http://localhost:3000/users/1');
-console.log('hola');
+const user = new User({ name: 'Alan', age: 26 });
+
+user.save();
