@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { AxiosResponse } from 'axios';
+import axios, { AxiosResponse } from 'axios';
+import { Eventing } from './Eventing';
 interface UserProps {
   name?: string;
   age?: number;
@@ -7,7 +7,7 @@ interface UserProps {
 }
 
 export class User {
- 
+  public events: Eventing = new Eventing();
   constructor(private data: UserProps) {}
   get(propName: string): number | string {
     return this.data[propName];
@@ -17,7 +17,6 @@ export class User {
     // using the sign ? in  the interface because of this, we can update one or more properties
     Object.assign(this.data, update);
   }
-  
 
   fetch(): void {
     try {
