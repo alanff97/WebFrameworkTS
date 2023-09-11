@@ -1,8 +1,8 @@
-
-export class Attributes <T extends object>{
+export class Attributes<T extends object> {
   constructor(private data: T) {}
-  get(propName: string): number | string {
-    return this.data[propName];
+  get<K extends keyof T>(key: K): T[K] {
+    // the only values of K its the keys of T, in this case UserProps(name,age,id)
+    return this.data[key];
   }
 
   set(update: T): void {
