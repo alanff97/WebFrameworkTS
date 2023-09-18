@@ -9,4 +9,7 @@ export class Attributes<T extends object> {
     // using the sign ? in  the interface because of this, we can update one or more properties
     Object.assign(this.data, update);
   }
+  getAll(): T {
+    return this.data;
+  }
 }
