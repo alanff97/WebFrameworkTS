@@ -1,4 +1,5 @@
-import { User } from './models/User';
+import { UserForm } from './views/UserForm';
 
-const user = new User({ name: 'prueba', age: 26 });
+const userForm = new UserForm(document.getElementById('root'));
 
+userForm.render();
