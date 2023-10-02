@@ -14,7 +14,7 @@ interface Events {
   trigger(eventName: string): void;
 }
 
-interface HasId {
+export interface HasId {
   id?: number;
 }
 
@@ -27,7 +27,7 @@ export class Model<T extends HasId> {
   on = this.events.on;
   // or use get on() {return this.events.on;}
   trigger = this.events.trigger;
-  get = this.attributes.get; 
+  get = this.attributes.get;
 
   set(update: T): void {
     this.attributes.set(update);
